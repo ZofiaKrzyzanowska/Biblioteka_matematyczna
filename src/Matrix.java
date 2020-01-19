@@ -168,5 +168,13 @@ public class Matrix {
         return true;
     }
 
+    public void show () {
+        for (int i = 0; i<M; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print(data[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
 
 }

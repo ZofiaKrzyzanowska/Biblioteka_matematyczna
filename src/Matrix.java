@@ -157,4 +157,16 @@ public class Matrix {
         return det;
     }
 
+
+    public boolean eq(Matrix m2) {
+        Matrix m1 = this;
+        if (m2.M != m1.M || m2.N != m1.N) return false;
+
+        for (int i = 0; i < M; i++)
+            for (int j = 0; j < N; j++)
+                if (m1.data[i][j] != m2.data[i][j]) return false;
+        return true;
+    }
+
+
 }

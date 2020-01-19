@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 
 class MatrixTest {
 
@@ -97,6 +98,21 @@ class MatrixTest {
         Matrix expected = new Matrix(c);
 
         expected.equals(actual);
+    }
+    
+    @Test
+    void eq(){
+        double[][] a = {{5, -1, 3}, {0, 1, -2}, {4, 3, 2}};
+        double[][] b = {{5, -1, 3}, {0, 1, -2}, {4, 3, 2}};
+        
+        Matrix A = new Matrix(a);
+        Matrix B = new Matrix(b);
+        
+        boolean actual = A.eq(B);
+        boolean expected = true;
+
+        assertEquals(expected, actual);
+        
     }
 
 }

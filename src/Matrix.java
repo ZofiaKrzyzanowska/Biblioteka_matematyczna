@@ -4,14 +4,14 @@ public class Matrix {
     private final int N;             // liczba kolumn
     private final double[][] data;   // tablica M-N
 
-    // create M-by-N matrix of 0's
+    // stworzenie macierzy M na N
     public Matrix(int M, int N) {
         this.M = M;
         this.N = N;
         data = new double[M][N];
     }
 
-    // create matrix based on 2d array
+    // stworzenie macierzy dwuwymiarowej
     public Matrix(double[][] data) {
         M = data.length;
         N = data[0].length;

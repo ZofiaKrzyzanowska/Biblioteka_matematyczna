@@ -22,7 +22,6 @@ public class Program {
             int c=scan2.nextInt();
             Matrix pierwsza=new Matrix(b,c);
             Matrix druga=new Matrix(b,c);
-
         }
 
     }

@@ -1,17 +1,24 @@
 public class Matrix {
+//
+    private final int M;             /** liczba wierszy */
+    private final int N;             /** liczba kolumn */
+    private final double[][] data;   /**  tablica M-N */
 
-    private final int M;             // liczba wierszy
-    private final int N;             // liczba kolumn
-    private final double[][] data;   // tablica M-N
-
-    // stworzenie macierzy M na N
+    /**
+     * Tworzenie macierzy M na N (określenie wielkości macierzy)
+     * @param M liczba wierszy
+     * @param N liczba kolumn
+     */
     public Matrix(int M, int N) {
         this.M = M;
         this.N = N;
         data = new double[M][N];
     }
 
-    // stworzenie macierzy dwuwymiarowej
+    /**
+     * Tworzenie macierzy dwuwymiarowej
+     * @param data tablica double
+     */
     public Matrix(double[][] data) {
         M = data.length;
         N = data[0].length;
@@ -21,11 +28,18 @@ public class Matrix {
                 this.data[i][j] = data[i][j];
     }
 
-    // copy constructor
+    /**
+     * Kopia konstruktora
+     * @param m1 pierwsz/główna macierz
+     */
     private Matrix(Matrix m1) {
         this(m1.data);
     }
 
+    /**
+     * Transpozycja macierzy
+     * @return powstała macierz
+     */
     public Matrix transposition (){
         Matrix m1 = this;
         Matrix m3 = new Matrix(M, N);
@@ -38,6 +52,11 @@ public class Matrix {
     }
 
 
+    /**
+     * Dodawanie macierzy
+     * @param m2 macierz dodawana
+     * @return powstała macierz
+     */
     public Matrix addition (Matrix m2){
 
         Matrix m1 = this;
@@ -56,6 +75,11 @@ public class Matrix {
         return m3;
     }
 
+    /**
+     * Odejmowanie macierzy
+     * @param m2 macierz odejmowana
+     * @return powstała macierz
+     */
     public Matrix subtraction (Matrix m2){
 
         Matrix m1 = this;
@@ -74,6 +98,11 @@ public class Matrix {
         return m3;
     }
 
+    /**
+     * Mnożenie macierzy przez skalar
+     * @param sca skalar przez który mnożymy
+     * @return
+     */
     public Matrix scalar (double sca){
         Matrix m1 = this;
         Matrix m3 = new Matrix(M, N);
@@ -86,6 +115,11 @@ public class Matrix {
         return m3;
     }
 
+    /**
+     * Mnozenie macierzy
+     * @param m2 macierz przez którą mnożymy
+     * @return powstała macierz
+     */
     public Matrix multiplication (Matrix m2){
         Matrix m1 = this;
         Matrix m3 = new Matrix(M, N);
@@ -107,6 +141,10 @@ public class Matrix {
         return m3;
     }
 
+    /**
+     * Zdefiniowanie wyznacznika macierzy
+     * @return wyznacznik macierzy
+     */
     public Matrix determinant() {
         Matrix m1 = this;
         Matrix det = new Matrix(M,N);
@@ -158,6 +196,11 @@ public class Matrix {
     }
 
 
+    /**
+     * Sprawdzanie czy macierze są równe
+     * @param m2 porównywana macierz
+     * @return true lub false
+     */
     public boolean eq(Matrix m2) {
         Matrix m1 = this;
         if (m2.M != m1.M || m2.N != m1.N) return false;
@@ -168,6 +211,9 @@ public class Matrix {
         return true;
     }
 
+    /**
+     * Wypisanie macierzy
+     */
     public void show () {
         for (int i = 0; i<M; i++) {
             for (int j = 0; j < N; j++) {

@@ -22,6 +22,21 @@ public class Program {
             int c=scan2.nextInt();
             Matrix pierwsza=new Matrix(b,c);
             Matrix druga=new Matrix(b,c);
+            double[][] pierwszaM=new double[b][c];
+            double[][] drugaM=new double[b][c];
+            for(int i=0; i<b;i++)for(int j=0;j<c;j++) {
+                System.out.println("Wprowadź wartość macierzy pierwszej na pozycji ["+i+"]["+j+"]:");
+                pierwszaM[i][j] = scan2.nextDouble();
+            }
+            for(int i=0; i<b;i++)for(int j=0;j<c;j++){
+                System.out.println("Wprowadź wartość macierzy drugiej na pozycji ["+i+"]["+j+"]:");
+                drugaM[i][j]=scan2.nextDouble();
+
+            }
+            Matrix pierwszaMa=new Matrix(pierwszaM);
+            Matrix drugaMa=new Matrix(drugaM);
+            Matrix suma=pierwszaMa.addition(drugaMa);
+            suma.show();
         }
 
     }

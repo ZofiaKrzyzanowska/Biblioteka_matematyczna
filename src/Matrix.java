@@ -1,5 +1,5 @@
 public class Matrix {
-//
+
     private final int M;             /** liczba wierszy */
     private final int N;             /** liczba kolumn */
     private final double[][] data;   /**  tablica M-N */

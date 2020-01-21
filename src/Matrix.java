@@ -5,7 +5,7 @@ public class Matrix {
     private final double[][] data;   /**  tablica M-N */
 
     /**
-     * Tworzenie macierzy M na N (określenie wielkości macierzy)
+     * Tworzenie macierzy M na N (okreslenie wielkosci macierzy)
      * @param M liczba wierszy
      * @param N liczba kolumn
      */
@@ -30,7 +30,7 @@ public class Matrix {
 
     /**
      * Kopia konstruktora
-     * @param m1 pierwsz/główna macierz
+     * @param m1 pierwsza/głowna macierz
      */
     private Matrix(Matrix m1) {
         this(m1.data);
@@ -38,7 +38,7 @@ public class Matrix {
 
     /**
      * Transpozycja macierzy
-     * @return powstała macierz
+     * @return powstala macierz
      */
     public Matrix transposition (){
         Matrix m1 = this;
@@ -55,7 +55,7 @@ public class Matrix {
     /**
      * Dodawanie macierzy
      * @param m2 macierz dodawana
-     * @return powstała macierz
+     * @return powstala macierz
      */
     public Matrix addition (Matrix m2){
 
@@ -78,7 +78,7 @@ public class Matrix {
     /**
      * Odejmowanie macierzy
      * @param m2 macierz odejmowana
-     * @return powstała macierz
+     * @return powstala macierz
      */
     public Matrix subtraction (Matrix m2){
 
@@ -99,9 +99,9 @@ public class Matrix {
     }
 
     /**
-     * Mnożenie macierzy przez skalar
-     * @param sca skalar przez który mnożymy
-     * @return
+     * Mnozenie macierzy przez skalar
+     * @param sca skalar przez ktory mnozymy
+     * @return powstala macierz
      */
     public Matrix scalar (double sca){
         Matrix m1 = this;
@@ -117,8 +117,8 @@ public class Matrix {
 
     /**
      * Mnozenie macierzy
-     * @param m2 macierz przez którą mnożymy
-     * @return powstała macierz
+     * @param m2 macierz przez ktora mnozymy
+     * @return powstala macierz
      */
     public Matrix multiplication (Matrix m2){
         Matrix m1 = this;
@@ -197,8 +197,8 @@ public class Matrix {
 
 
     /**
-     * Sprawdzanie czy macierze są równe
-     * @param m2 porównywana macierz
+     * Sprawdzanie czy macierze sa rowne
+     * @param m2 porownywana macierz
      * @return true lub false
      */
     public boolean eq(Matrix m2) {

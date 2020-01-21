@@ -1,7 +1,7 @@
 public class Write {
 
     /**
-     * Wypisanie przykładowej macierzy
+     * Wypisanie przykladowej macierzy
      * @param args
      */
     public static void main (String[] args){

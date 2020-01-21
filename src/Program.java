@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Program {
 
     /**
-     * Przykładowy program z wykorzystaniem klasy Matrix
+     * Przykladowy program z wykorzystaniem klasy Matrix
      * @param args
      */
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class Program {
         System.out.println("Inna liczba-Wyłączenie programu");
         int a = scan.nextInt(); /** Wybór działania */
         if (a == 1) {
-            System.out.println("Podaj wielkość macierzy:");
+            System.out.println("Podaj wielkosc macierzy:");
 
             Scanner scan2 = new Scanner(System.in);
             System.out.println("Liczba kolumn:");

@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Klasa sluzaca do testowania klasy Matrix.
+ */
 class MatrixTest {
 
     @org.junit.jupiter.api.Test

@@ -1,3 +1,8 @@
+/**
+ * Klasa sluzaca do wykonywania podstawowych operacji na macierzach:
+ * dodawania, odejmowania, mnożenia przez skalar, transpozycji, definiowania wyznacznika, sprawdzanie czy sa rowne, wypisywania.
+ * @author Zofia Krzyzanowska, Rafal Roter
+ */
 public class Matrix {
 
     private final int M;             /** liczba wierszy */

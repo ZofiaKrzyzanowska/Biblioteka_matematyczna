@@ -1,3 +1,6 @@
+/**
+ * Klasa sluzaca do przetestowania wypisywania macierzy.
+ */
 public class Write {
 
     /**

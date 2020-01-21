@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Program testujacy dzialanie klasy Matrix i wszystkich metod w niej zawartych.
+ */
 public class Program {
 
     /**

@@ -2,8 +2,12 @@ import java.util.Scanner;
 
 public class Program {
 
+    /**
+     * Przykładowy program z wykorzystaniem klasy Matrix
+     * @param args
+     */
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in); /** Rozpoczęcie pracy skanera */
         System.out.println("Wybierz działanie jakie chciałbyś wykonać:");
         System.out.println("1-Dodawanie macierzy");
         System.out.println("2-Odejmowanie macierzy");
@@ -14,7 +18,7 @@ public class Program {
         System.out.println("7-Sprawdzenie czy macierze są równe");
         System.out.println("8-Wypisanie macierzy");
         System.out.println("Inna liczba-Wyłączenie programu");
-        int a = scan.nextInt();
+        int a = scan.nextInt(); /** Wybór działania */
         if (a == 1) {
             System.out.println("Podaj wielkość macierzy:");
 
@@ -211,6 +215,5 @@ public class Program {
             pierwszaMa.show();
 
         }
-
     }
 }

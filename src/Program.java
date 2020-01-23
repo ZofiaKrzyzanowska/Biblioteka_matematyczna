@@ -23,32 +23,54 @@ public class Program {
         System.out.println("Inna liczba-Wyłączenie programu");
         int a = scan.nextInt(); /** Wybór działania */
         if (a == 1) {
-            System.out.println("Podaj wielkosc macierzy:");
 
-            Scanner scan2 = new Scanner(System.in);
-            System.out.println("Liczba kolumn:");
-            int b = scan2.nextInt();
-            System.out.println("Liczba wierszy:");
-            int c = scan2.nextInt();
-            double[][] pierwszaM = new double[b][c];
-            double[][] drugaM = new double[b][c];
-            for (int i = 0; i < b; i++)
-                for (int j = 0; j < c; j++) {
-                    System.out.println("Wprowadź wartość macierzy pierwszej na pozycji [" + i + "][" + j + "]:");
-                    pierwszaM[i][j] = scan2.nextDouble();
-                }
-            for (int i = 0; i < b; i++)
-                for (int j = 0; j < c; j++) {
-                    System.out.println("Wprowadź wartość macierzy drugiej na pozycji [" + i + "][" + j + "]:");
-                    drugaM[i][j] = scan2.nextDouble();
+            Scanner scan3 = new Scanner(System.in);
+            System.out.println("1-Macierz wprowadzona z klawiatury");
+            System.out.println("2-Macierz wprowadzona z pliku");
+            int d = scan3.nextInt();
 
-                }
+            if (d==1) {
+
+                System.out.println("Podaj wielkosc macierzy:");
+
+                Scanner scan2 = new Scanner(System.in);
+                System.out.println("Liczba kolumn:");
+                int b = scan2.nextInt();
+                System.out.println("Liczba wierszy:");
+                int c = scan2.nextInt();
+                double[][] pierwszaM = new double[b][c];
+                double[][] drugaM = new double[b][c];
+                for (int i = 0; i < b; i++)
+                    for (int j = 0; j < c; j++) {
+                        System.out.println("Wprowadź wartość macierzy pierwszej na pozycji [" + i + "][" + j + "]:");
+                        pierwszaM[i][j] = scan2.nextDouble();
+                    }
+                for (int i = 0; i < b; i++)
+                    for (int j = 0; j < c; j++) {
+                        System.out.println("Wprowadź wartość macierzy drugiej na pozycji [" + i + "][" + j + "]:");
+                        drugaM[i][j] = scan2.nextDouble();
+
+                    }
+
             Matrix pierwszaMa = new Matrix(pierwszaM);
             Matrix drugaMa = new Matrix(drugaM);
             Matrix suma = pierwszaMa.addition(drugaMa);
-            suma.show();
+            suma.show();}
+            else if (d == 2){
+                ReadFile mat1 = new ReadFile();
+                mat1.Read();
+                Matrix Mat1 = new Matrix(ReadFile.getM());
 
-        }
+                ReadFile mat2 = new ReadFile();
+                mat2.Read();
+                Matrix Mat2 = new Matrix(ReadFile.getM());
+
+                Matrix suma2 = Mat1.addition(Mat2);
+                suma2.show();} else {};
+
+            }
+
+
         if (a == 2) {
             System.out.println("Podaj wielkość macierzy:");
 

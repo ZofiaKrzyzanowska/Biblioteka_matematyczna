@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Klasa sluzaca do wczytywania pliku z macierza z klawiatury.
+ */
 public class ReadFile {
 
     private static double x = 0;

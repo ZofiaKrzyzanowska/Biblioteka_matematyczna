@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -10,9 +11,9 @@ class MatrixTest {
     public void addition() {
 
 
-        double [][] a = {{1, 2}, {3, 4}};
-        double [][] b = {{1, 2}, {3, 4}};
-        double [][] c = {{2, 4}, {6, 8}};
+        double[][] a = {{1, 2}, {3, 4}};
+        double[][] b = {{1, 2}, {3, 4}};
+        double[][] c = {{2, 4}, {6, 8}};
 
         Matrix A = new Matrix(a);
         Matrix B = new Matrix(b);
@@ -28,7 +29,7 @@ class MatrixTest {
     void transposition() {
 
         double[][] a = {{-1, 2}, {3, 3}};
-        double [][] c = {{-1, 3}, {2, 3}};
+        double[][] c = {{-1, 3}, {2, 3}};
 
         Matrix A = new Matrix(a);
 
@@ -43,9 +44,9 @@ class MatrixTest {
     @Test
     void subtraction() {
 
-        double [][] a = {{1, 2}, {3, 4}};
-        double [][] b = {{1, 2}, {3, 4}};
-        double [][] c = {{0, 0}, {0, 0}};
+        double[][] a = {{1, 2}, {3, 4}};
+        double[][] b = {{1, 2}, {3, 4}};
+        double[][] c = {{0, 0}, {0, 0}};
 
         Matrix A = new Matrix(a);
         Matrix B = new Matrix(b);
@@ -60,9 +61,9 @@ class MatrixTest {
     @Test
     void scalar() {
 
-        double [][] a = {{4, 2}, {3, 1}};
+        double[][] a = {{4, 2}, {3, 1}};
         double b = 2;
-        double [][] c = {{8, 4}, {6, 2}};
+        double[][] c = {{8, 4}, {6, 2}};
 
         Matrix A = new Matrix(a);
 
@@ -76,9 +77,9 @@ class MatrixTest {
     @Test
     void multiplication() {
 
-        double [][] a = {{1, -1}, {2, 3}, {0.5, 1}};
-        double [][] b = {{2, -0.5}, {2, 5}};
-        double [][] c = {{0, -5.5}, {10, 14}, {3, 4.75}};
+        double[][] a = {{1, -1}, {2, 3}, {0.5, 1}};
+        double[][] b = {{2, -0.5}, {2, 5}};
+        double[][] c = {{0, -5.5}, {10, 14}, {3, 4.75}};
 
         Matrix A = new Matrix(a);
         Matrix B = new Matrix(b);
@@ -92,9 +93,9 @@ class MatrixTest {
 
 
     @Test
-    void determinant(){
-        double [][] a = {{5, -1, 3}, {0, 1, -2}, {4, 3, 2}};
-        double [][] c = {{36}};
+    void determinant() {
+        double[][] a = {{5, -1, 3}, {0, 1, -2}, {4, 3, 2}};
+        double[][] c = {{36}};
         Matrix A = new Matrix(a);
 
         Matrix actual = A.determinant();
@@ -102,20 +103,20 @@ class MatrixTest {
 
         expected.equals(actual);
     }
-    
+
     @Test
-    void eq(){
+    void eq() {
         double[][] a = {{5, -1, 3}, {0, 1, -2}, {4, 3, 2}};
         double[][] b = {{5, -1, 3}, {0, 1, -2}, {4, 3, 2}};
-        
+
         Matrix A = new Matrix(a);
         Matrix B = new Matrix(b);
-        
+
         boolean actual = A.eq(B);
         boolean expected = true;
 
         assertEquals(expected, actual);
-        
+
     }
 
 }

@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
@@ -11,13 +12,13 @@ public class ReadFile {
 
     private static double x = 0;
     private static double y = 0;
-    private static double [][] m;
+    private static double[][] m;
 
     public static double[][] getM() {
         return m;
     }
 
-    public static void Read (){
+    public static void Read() {
 
         System.out.println("Podaj plik z macierzą");
 
@@ -29,28 +30,29 @@ public class ReadFile {
             String line = "";
             int i = 0;
             while ((line = br.readLine()) != null) {
-                if (i==0){
+                if (i == 0) {
                     StringTokenizer token = new StringTokenizer(line);
-                    x = Double.valueOf((String)token.nextElement());
-                    y = Double.valueOf((String)token.nextElement());
+                    x = Double.valueOf((String) token.nextElement());
+                    y = Double.valueOf((String) token.nextElement());
                     m = new double[(int) x][(int) y];
-                }
-                else {
+                } else {
                     int j = 0;
                     char[] stringToCharArray = line.toCharArray();
                     for (char output : stringToCharArray) {
-                        if(output != ' '){
-                            m[i-1][j] = (double)Character.getNumericValue(output);
+                        if (output != ' ') {
+                            m[i - 1][j] = Character.getNumericValue(output);
                             j++;
                         }
                     }
                 }
                 i++;
             }
-        }
-        catch (IOException ioe) {
+        } catch (FileNotFoundException e) {
+            System.err.println("Plik nie istnieje");
+        } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+
     }
 
 }

@@ -1,6 +1,7 @@
 /**
  * Klasa sluzaca do wykonywania podstawowych operacji na macierzach:
  * dodawania, odejmowania, mnożenia przez skalar, transpozycji, definiowania wyznacznika, sprawdzanie czy sa rowne, wypisywania.
+ *
  * @author Zofia Krzyzanowska, Rafal Roter
  */
 public class Matrix {
@@ -11,6 +12,7 @@ public class Matrix {
 
     /**
      * Tworzenie macierzy M na N (okreslenie wielkosci macierzy)
+     *
      * @param M liczba wierszy
      * @param N liczba kolumn
      */
@@ -22,6 +24,7 @@ public class Matrix {
 
     /**
      * Tworzenie macierzy dwuwymiarowej
+     *
      * @param data tablica double
      */
     public Matrix(double[][] data) {
@@ -35,6 +38,7 @@ public class Matrix {
 
     /**
      * Kopia konstruktora
+     *
      * @param m1 pierwsza/głowna macierz
      */
     private Matrix(Matrix m1) {
@@ -43,13 +47,14 @@ public class Matrix {
 
     /**
      * Transpozycja macierzy
+     *
      * @return powstala macierz
      */
-    public Matrix transposition (){
+    public Matrix transposition() {
         Matrix m1 = this;
         Matrix m3 = new Matrix(M, N);
-        for (int i = 0; i<m1.M; i++){
-            for (int j = 0; j<m1.N; j++){
+        for (int i = 0; i < m1.M; i++) {
+            for (int j = 0; j < m1.N; j++) {
                 m3.data[j][i] = m1.data[i][j];
             }
         }
@@ -59,17 +64,18 @@ public class Matrix {
 
     /**
      * Dodawanie macierzy
+     *
      * @param m2 macierz dodawana
      * @return powstala macierz
      */
-    public Matrix addition (Matrix m2){
+    public Matrix addition(Matrix m2) {
 
         Matrix m1 = this;
         Matrix m3 = new Matrix(M, N);
 
-        if (m1.M == m2.M &&  m1.N == m2.N){
-            for (int i = 0; i<m1.M; i++){
-                for (int j = 0; j<m1.N; j++){
+        if (m1.M == m2.M && m1.N == m2.N) {
+            for (int i = 0; i < m1.M; i++) {
+                for (int j = 0; j < m1.N; j++) {
                     m3.data[i][j] = (m1.data[i][j] + m2.data[i][j]);
                 }
             }
@@ -82,17 +88,18 @@ public class Matrix {
 
     /**
      * Odejmowanie macierzy
+     *
      * @param m2 macierz odejmowana
      * @return powstala macierz
      */
-    public Matrix subtraction (Matrix m2){
+    public Matrix subtraction(Matrix m2) {
 
         Matrix m1 = this;
         Matrix m3 = new Matrix(M, N);
 
-        if (m1.M == m2.M &&  m1.N == m2.N){
-            for (int i = 0; i<m1.M; i++){
-                for (int j = 0; j<m1.N; j++){
+        if (m1.M == m2.M && m1.N == m2.N) {
+            for (int i = 0; i < m1.M; i++) {
+                for (int j = 0; j < m1.N; j++) {
                     m3.data[i][j] = (m1.data[i][j] - m2.data[i][j]);
                 }
             }
@@ -105,15 +112,16 @@ public class Matrix {
 
     /**
      * Mnozenie macierzy przez skalar
+     *
      * @param sca skalar przez ktory mnozymy
      * @return powstala macierz
      */
-    public Matrix scalar (double sca){
+    public Matrix scalar(double sca) {
         Matrix m1 = this;
         Matrix m3 = new Matrix(M, N);
 
-        for (int i = 0; i<m1.M; i++){
-            for (int j = 0; j<m1.N; j++){
+        for (int i = 0; i < m1.M; i++) {
+            for (int j = 0; j < m1.N; j++) {
                 m3.data[i][j] = (m1.data[i][j] * sca);
             }
         }
@@ -122,16 +130,17 @@ public class Matrix {
 
     /**
      * Mnozenie macierzy
+     *
      * @param m2 macierz przez ktora mnozymy
      * @return powstala macierz
      */
-    public Matrix multiplication (Matrix m2){
+    public Matrix multiplication(Matrix m2) {
         Matrix m1 = this;
         Matrix m3 = new Matrix(M, N);
 
-        if (m1.N == m2.M){
-            for (int i = 0; i<m1.M; i++){
-                for (int j = 0; j<m1.N; j++){
+        if (m1.N == m2.M) {
+            for (int i = 0; i < m1.M; i++) {
+                for (int j = 0; j < m1.N; j++) {
                     double temp = 0;
                     for (int k = 0; k < m2.M; k++) {
                         temp += (m1.data[i][k] * m2.data[k][j]);
@@ -148,11 +157,12 @@ public class Matrix {
 
     /**
      * Zdefiniowanie wyznacznika macierzy
+     *
      * @return wyznacznik macierzy
      */
     public Matrix determinant() {
         Matrix m1 = this;
-        Matrix det = new Matrix(M,N);
+        Matrix det = new Matrix(M, N);
 
         if (m1.M == 1 && m1.N == 1) {
             det.data[0][0] = m1.data[0][0];
@@ -203,6 +213,7 @@ public class Matrix {
 
     /**
      * Sprawdzanie czy macierze sa rowne
+     *
      * @param m2 porownywana macierz
      * @return true lub false
      */
@@ -219,8 +230,8 @@ public class Matrix {
     /**
      * Wypisanie macierzy
      */
-    public void show () {
-        for (int i = 0; i<M; i++) {
+    public void show() {
+        for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
                 System.out.print(data[i][j] + "\t");
             }
